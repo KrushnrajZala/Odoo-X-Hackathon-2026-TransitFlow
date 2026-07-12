@@ -1,0 +1,337 @@
+/* ============================================
+   TRANSITOPS - DASHBOARD STYLESHEET
+   ============================================ */
+
+/* ----- Dashboard Cards ----- */
+.stat-card {
+    border: none;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    background: white;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card .card-body {
+    padding: 1.5rem;
+}
+
+.stat-card h6 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-card h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-card .stat-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+.stat-icon.bg-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.stat-icon.bg-success {
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.stat-icon.bg-warning {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+.stat-icon.bg-info {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.stat-icon.bg-danger {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* ----- Progress Bar ----- */
+.progress {
+    height: 8px;
+    border-radius: 4px;
+    background: #e9ecef;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: width 1.5s ease;
+    border-radius: 4px;
+}
+
+/* ----- Chart Container ----- */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* ----- Quick Action Buttons ----- */
+.quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.quick-action-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    background: #f8f9fa;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.quick-action-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(13, 110, 253, 0.3);
+    text-decoration: none;
+}
+
+.quick-action-btn i {
+    margin-right: 8px;
+}
+
+/* ----- Welcome Banner ----- */
+.welcome-banner {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.welcome-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: 20%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+}
+
+.welcome-banner h4 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-banner p {
+    opacity: 0.9;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* ----- Activity Feed ----- */
+.activity-feed {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.activity-item:hover {
+    background: #f8f9fa;
+    padding-left: 10px;
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 12px;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-content .activity-title {
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.activity-content .activity-time {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+}
+
+/* ----- Status Indicators ----- */
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.status-dot.active {
+    background: var(--success-color);
+}
+
+.status-dot.inactive {
+    background: var(--danger-color);
+}
+
+.status-dot.pending {
+    background: var(--warning-color);
+}
+
+.status-dot.away {
+    background: var(--info-color);
+}
+
+/* ----- Responsive Dashboard ----- */
+@media (max-width: 992px) {
+    .stat-card h2 {
+        font-size: 1.8rem;
+    }
+    
+    .stat-card .stat-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .stat-card .card-body {
+        padding: 1rem;
+    }
+    
+    .stat-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .stat-card .stat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .welcome-banner {
+        padding: 1.5rem;
+    }
+    
+    .quick-action-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .chart-container {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .stat-card h2 {
+        font-size: 1.2rem;
+    }
+    
+    .stat-card h6 {
+        font-size: 0.7rem;
+    }
+    
+    .stat-card .stat-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ----- Dark Mode Dashboard ----- */
+.dark-mode .stat-card {
+    background: #16213e;
+}
+
+.dark-mode .stat-card h6 {
+    color: #a0aec0;
+}
+
+.dark-mode .quick-action-btn {
+    background: #1a1a2e;
+    color: #a0aec0;
+}
+
+.dark-mode .quick-action-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.dark-mode .activity-item {
+    border-color: #2a2a4e;
+}
+
+.dark-mode .activity-item:hover {
+    background: #1a1a2e;
+}
+
+.dark-mode .progress {
+    background: #2a2a4e;
+}
